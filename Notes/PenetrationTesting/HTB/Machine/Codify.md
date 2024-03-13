@@ -190,7 +190,7 @@ console.log(vm.run(code));
 
 
 
-#john hash --wordlist=/usr/share/wordlists/rockyou.txt --format=bcrypt
+john hash --wordlist=/usr/share/wordlists/rockyou.txt --format=bcrypt
 
 -rwxr-xr-x 1 root root 928 Nov  2 12:26 /opt/scripts/mysql-backup.sh
 
