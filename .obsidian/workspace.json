@@ -18,26 +18,21 @@
                 "source": false
               }
             }
-          }
-        ]
-      },
-      {
-        "id": "48d14f8e7e3d674a",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "62da50f6401e1fa7",
+            "id": "395021fff9ae4028",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Temporary Notes.md",
+                "file": "Notes/PenetrationTesting/Pentesting CheatSheet.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/PenetrationTesting/HTB/Machine/Crafty.md",
+                "file": "Notes/PenetrationTesting/Pentesting CheatSheet.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/PenetrationTesting/HTB/Machine/Crafty.md",
+                "file": "Notes/PenetrationTesting/Pentesting CheatSheet.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/PenetrationTesting/HTB/Machine/Crafty.md"
+                "file": "Notes/PenetrationTesting/Pentesting CheatSheet.md"
               }
             }
           }
@@ -164,24 +159,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "caf94e4b0c374361",
+  "active": "395021fff9ae4028",
   "lastOpenFiles": [
-    "Notes/Temporary Notes.md",
+    "Notes/Images/hacking.gif",
+    "Notes/Images/hacking.gif.crdownload",
     "Notes/PenetrationTesting/HTB/Machine/Crafty.md",
+    "Notes/PenetrationTesting/HTB/Machine/Codify.md",
+    "Notes/PenetrationTesting/Pentesting CheatSheet.md",
+    "Notes/PenetrationTesting/HTB/Machine/Devvortex.md",
+    "Notes/PenetrationTesting/IndexPenTest.md",
+    "Notes/Temporary Notes.md",
     "Notes/Images/Pasted image 20240310003432.png",
     "Notes/Images/Pasted image 20240309234035.png",
     "Notes/Images/Pasted image 20240310003354.png",
     "().md",
-    "Notes/PenetrationTesting/HTB/Machine/Codify.md",
     "Notes/Images/Pasted image 20240309145213.png",
     "Notes/Images/Pasted image 20240310225653.png",
     "Notes/Images/Pasted image 20240310235407.png",
-    "Notes/PenetrationTesting/Pentesting CheatSheet.md",
-    "Notes/PenetrationTesting/IndexPenTest.md",
     "Notes/Malware Analysis/Index.md",
     "index.md",
     "Notes/Images/MalwareAnalysis.png",
-    "Notes/Malware Analysis",
-    "Notes/PenetrationTesting/HTB/Machine/Devvortex.md"
+    "Notes/Malware Analysis"
   ]
 }

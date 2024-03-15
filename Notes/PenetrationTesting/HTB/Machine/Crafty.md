@@ -238,7 +238,7 @@ Execute the reverse shell
 no in the listener download the .jar file
 
 ``` bash
-	download playercounter-1.0_SNAPSHOT.jar
+download playercounter-1.0_SNAPSHOT.jar
 ```
 
 Now to decompile this i use this [java-decompiler](http://java-decompiler.github.io). I found interesting class
