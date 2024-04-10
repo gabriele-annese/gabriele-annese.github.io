@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Network - Cisco/Network Components, Types and Connections.md",
+                "file": "Notes/Network-Cisco/Index.md",
                 "mode": "source",
                 "source": false
               }
@@ -101,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Network - Cisco/Network Components, Types and Connections.md",
+                "file": "Notes/Network-Cisco/Index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Network - Cisco/Network Components, Types and Connections.md",
+                "file": "Notes/Network-Cisco/Index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Network - Cisco/Network Components, Types and Connections.md"
+                "file": "Notes/Network-Cisco/Index.md"
               }
             }
           }
@@ -164,16 +164,17 @@
   },
   "active": "1dee6eeffc60b445",
   "lastOpenFiles": [
+    "Notes/Network-Cisco/Network Components, Types and Connections.md",
+    "Notes/Network-Cisco/Index.md",
+    "index.md",
+    "README.md",
     "Notes/Images/NetworkEndDevices.png",
     "Notes/Images/Network-Hardware-Components.png",
-    "Notes/Network - Cisco/Network Components, Types and Connections.md",
     "Notes/Malware Analysis/Index.md",
     "Notes/Images/MalwareAnalysis.png",
     "Notes/Academy/HTB/Penetration Testing Process/Penetration Testing Process.md",
-    "README.md",
     "HTB/Perfection.md",
-    "index.md",
-    "Notes/Network - Cisco",
+    "Notes/Network-Cisco",
     "Notes/PenetrationTesting/HTB/Machine/Perfection.md",
     "Notes/Temporary Notes.md",
     "Notes/PenetrationTesting/IndexPenTest.md",
