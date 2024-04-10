@@ -4,35 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "f49d2145fcd05e8e",
+        "id": "2e6d212883de3031",
         "type": "tabs",
         "children": [
           {
-            "id": "caf94e4b0c374361",
+            "id": "1dee6eeffc60b445",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/PenetrationTesting/HTB/Machine/Crafty.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "395021fff9ae4028",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/PenetrationTesting/Pentesting CheatSheet.md",
+                "file": "Notes/Network - Cisco/Network Components, Types and Connections.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
+      },
+      {
+        "id": "8d96fa8275a993a6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "46c4a67dfab43dec",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Notes/Images/NetworkEndDevices.png"
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/PenetrationTesting/Pentesting CheatSheet.md",
+                "file": "Notes/Network - Cisco/Network Components, Types and Connections.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/PenetrationTesting/Pentesting CheatSheet.md",
+                "file": "Notes/Network - Cisco/Network Components, Types and Connections.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/PenetrationTesting/Pentesting CheatSheet.md"
+                "file": "Notes/Network - Cisco/Network Components, Types and Connections.md"
               }
             }
           }
@@ -159,26 +162,37 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "395021fff9ae4028",
+  "active": "1dee6eeffc60b445",
   "lastOpenFiles": [
-    "Notes/Images/hacking.gif",
-    "Notes/Images/hacking.gif.crdownload",
+    "Notes/Images/NetworkEndDevices.png",
+    "Notes/Images/Network-Hardware-Components.png",
+    "Notes/Network - Cisco/Network Components, Types and Connections.md",
+    "Notes/Malware Analysis/Index.md",
+    "Notes/Images/MalwareAnalysis.png",
+    "Notes/Academy/HTB/Penetration Testing Process/Penetration Testing Process.md",
+    "README.md",
+    "HTB/Perfection.md",
+    "index.md",
+    "Notes/Network - Cisco",
+    "Notes/PenetrationTesting/HTB/Machine/Perfection.md",
+    "Notes/Temporary Notes.md",
+    "Notes/PenetrationTesting/IndexPenTest.md",
+    "HTB",
+    "Notes/Academy/HTB/Penetration Testing Process",
+    "Notes/Images/Acedemy-ChainProcess.png",
+    "Notes/Academy/HTB",
+    "Notes/Academy",
+    "Notes/Images/Pwned-Perfection.png",
+    "Notes/Images/PwdSusan-perfection.png",
+    "Notes/Images/Pasted image 20240309144937.png",
+    "Notes/Images/LinpeasInfo-Perfection.png",
+    "Notes/Images/hURL-Perfection.png",
+    "Notes/PenetrationTesting/HTB/Machine/Devvortex.md",
     "Notes/PenetrationTesting/HTB/Machine/Crafty.md",
     "Notes/PenetrationTesting/HTB/Machine/Codify.md",
     "Notes/PenetrationTesting/Pentesting CheatSheet.md",
-    "Notes/PenetrationTesting/HTB/Machine/Devvortex.md",
-    "Notes/PenetrationTesting/IndexPenTest.md",
-    "Notes/Temporary Notes.md",
-    "Notes/Images/Pasted image 20240310003432.png",
-    "Notes/Images/Pasted image 20240309234035.png",
-    "Notes/Images/Pasted image 20240310003354.png",
+    "Notes/Images/hacking.gif.crdownload",
     "().md",
-    "Notes/Images/Pasted image 20240309145213.png",
-    "Notes/Images/Pasted image 20240310225653.png",
-    "Notes/Images/Pasted image 20240310235407.png",
-    "Notes/Malware Analysis/Index.md",
-    "index.md",
-    "Notes/Images/MalwareAnalysis.png",
     "Notes/Malware Analysis"
   ]
 }
