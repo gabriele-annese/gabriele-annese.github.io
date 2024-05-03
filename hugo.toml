@@ -86,9 +86,9 @@ paginate = 5
 
     [languages.en.menu]
       [[languages.en.menu.main]]
-        identifier = "Test"
-        name = "Test"
-        url = "/Test"
+        identifier = "Whoami"
+        name = "Whoami"
+        url = "/Whoami"
 
 [module]
   # In case you would like to make changes to the theme and keep it locally in you repository,

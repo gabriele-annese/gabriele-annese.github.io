@@ -6,13 +6,24 @@
     <description>Recent content on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 May 2024 08:23:10 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 May 2024 23:09:38 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Test</title>
+      <link>//localhost:1313/posts/cars2/</link>
+      <pubDate>Fri, 03 May 2024 23:09:38 +0200</pubDate>
+      
+      <guid>//localhost:1313/posts/cars2/</guid>
+      <description>Hello world!!!!!</description>
+      <content>&lt;p&gt;Hello world!!!!!&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>WHOAMI</title>
-      <link>//localhost:1313/test/</link>
+      <link>//localhost:1313/whoami/</link>
       <pubDate>Thu, 02 May 2024 08:23:10 +0200</pubDate>
       
-      <guid>//localhost:1313/test/</guid>
+      <guid>//localhost:1313/whoami/</guid>
       <description>My name is Gabriele Annese, and</description>
       <content>&lt;p&gt;My name is &lt;strong&gt;Gabriele Annese&lt;/strong&gt;, and&lt;/p&gt;
 </content>
