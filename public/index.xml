@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terminal</title>
-    <link>/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 May 2024 23:32:03 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2024 14:09:01 +0200</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intro to C2 Framework</title>
-      <link>/posts/introtoc2framework/</link>
-      <pubDate>Fri, 03 May 2024 23:32:03 +0200</pubDate>
+      <link>//localhost:1313/posts/introtoc2framework/</link>
+      <pubDate>Sun, 05 May 2024 14:09:01 +0200</pubDate>
       
-      <guid>/posts/introtoc2framework/</guid>
+      <guid>//localhost:1313/posts/introtoc2framework/</guid>
       <description>Introduction Commad and Control (C2) Frameworks are an essential part of both Red Temmers and Advanced Adversaries playbooks. They make it both easy to manage compromised devices during a engagement and often help aid in laterl movement.
 Command and Control Framework Structure What is a Command and Control Framework In order to better understand what a C2 Framework is at its most basic level, think of Netcat listener (the C2 server) that is capable of handling many reverse shells calling back at once (C2 Agent).</description>
       <content>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -20,7 +20,7 @@ Command and Control Framework Structure What is a Command and Control Framework 
 &lt;h3 id=&#34;command-and-control-framework-structure&#34;&gt;Command and Control Framework Structure&lt;/h3&gt;
 &lt;h2 id=&#34;what-is-a-command-and-control-framework&#34;&gt;What is a Command and Control Framework&lt;/h2&gt;
 &lt;p&gt;In order to better understand what a C2 Framework is at its most basic level, think of Netcat listener (&lt;strong&gt;the C2 server&lt;/strong&gt;) that is capable of handling many reverse shells calling back at once (&lt;strong&gt;C2 Agent&lt;/strong&gt;). It&amp;rsquo;s a server but for reverse shell. Unlike Netcat almost C2 framework require a special payload generetor. Example &lt;strong&gt;Metasploit&lt;/strong&gt; have the own paylod generator &lt;strong&gt;MSFVenom&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../../public/img/C2-Callback.png&#34;&gt;The Diagram depicts three compromised clients calling back to a c2 Server&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;The Diagram depicts three compromised clients calling back to a c2 Server&#34; src=&#34;../../img/C2-Callback.png&#34;&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;command-and-control-structure&#34;&gt;Command and Control Structure&lt;/h2&gt;
 &lt;h3 id=&#34;c2-server&#34;&gt;C2 Server&lt;/h3&gt;
 &lt;p&gt;In order to understand a C2 framework, we must first by understanding the various components of a C2 server. The &lt;strong&gt;C2 server&lt;/strong&gt; as a hub for agents to call back to. Agents will periodically reach out to the &lt;strong&gt;C2 server&lt;/strong&gt; and wait the operator&amp;rsquo;s command.&lt;/p&gt;
@@ -61,7 +61,7 @@ Command and Control Framework Structure What is a Command and Control Framework 
 &lt;p&gt;There are two type of payloads in C2 Framework; &lt;strong&gt;Staged&lt;/strong&gt; and &lt;strong&gt;Stageless&lt;/strong&gt; payloads.&lt;/p&gt;
 &lt;h3 id=&#34;stageless-payloads&#34;&gt;Stageless Payloads&lt;/h3&gt;
 &lt;p&gt;The stageless payloads are simplest of the two; &lt;strong&gt;they contain the full C2 agent and will call back to the C2 server.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../../public/img/StagelessPayload.png&#34;&gt;This screenshot depicts a stageless payload calling back to a C2 server&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../../img/StagelessPayload.png&#34;&gt;This screenshot depicts a stageless payload calling back to a C2 server&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Steps for establishing C2 beaconing with a Satgeless payload are as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The Victim downloads and executes the Dropper.&lt;/li&gt;
@@ -69,7 +69,7 @@ Command and Control Framework Structure What is a Command and Control Framework 
 &lt;/ol&gt;
 &lt;h3 id=&#34;staged-payloads&#34;&gt;Staged Payloads&lt;/h3&gt;
 &lt;p&gt;Staged payloads require a callback to the C2 server to dowload additional parts of the C2 agent. Thi is commonly refferd to as &amp;ldquo;Dropper&amp;rdquo; because it &amp;ldquo;Dropped&amp;rdquo; onto the victim machine to dowload the second staged of our payload. This is a preferred method over stageless payloads beacouse a &lt;strong&gt;small amount of code needs to be written to retrive the additional parts of the C2 agent from the C2 server.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../../public/img/StagedPayload.png&#34;&gt;This diagram depicts a dropper calling back to a C2 server for its second stage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;This diagram depicts a dropper calling back to a C2 server for its second stage&#34; src=&#34;../../img/StagedPayload.png&#34;&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The Victim dowloads and executes the Dropper&lt;/li&gt;
 &lt;li&gt;The Dropper calls back to the C2 server of Stage2&lt;/li&gt;
@@ -97,7 +97,7 @@ Command and Control Framework Structure What is a Command and Control Framework 
 &lt;p&gt;Post Exploitation modules are simply modules that deal with anything after the initial point of compromise, this could be as running SharpHound.psq to find paths pf later movement, or it could be as complex as dumping LSASS and parsing credentials in memory.&lt;/p&gt;
 &lt;h3 id=&#34;pivoting-modules&#34;&gt;Pivoting Modules&lt;/h3&gt;
 &lt;p&gt;One of the last major components of a C2 Framework is its pivoting modules, making it easier to access restricted network segments within the C2 Framework. If you have Administrative Access on a system you may be able to open up an &amp;ldquo;SMB Beacon&amp;rdquo;, which can enable a machine to act proxy vi athe SMB protocol, this may allow machines in a restricted network segment to comunicate with C2 server.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../../public/img/pivotSMB.png&#34;&gt;This diagram dipcts multiple victims with an SMB pviot calling back to a C2 server.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;This diagram dipcts multiple victims with an SMB pviot calling back to a C2 server.&#34; src=&#34;../../img/pivotSMB.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The diagram below show how hosts within a restricted network segment call back to the C2 serve:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The Victims call back to an SMB named pipe on another Victim in a non-restricted network segment.&lt;/li&gt;
@@ -109,7 +109,7 @@ Command and Control Framework Structure What is a Command and Control Framework 
 &lt;p&gt;One importat obstavle that all Red Teammers must overcone is placing infrastructure in plai vuew. There are many different methods to do this; one of the most popular methods is called &amp;ldquo;Domain Fronting&amp;rdquo;&lt;/p&gt;
 &lt;h3 id=&#34;domain-fronting&#34;&gt;Domain Fronting&lt;/h3&gt;
 &lt;p&gt;Domain Frontig utilizes a know good host for example Cloudflare.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../../public/img/DomainFronting.png&#34;&gt;This diagram shows an example HTTP beacon from a compromised device&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;This diagram shows an example HTTP beacon from a compromised device&#34; src=&#34;../../img/DomainFronting.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The diagram above depicts how Domain Fronting works:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The C2 Operator has a domain that proxies all requests through Cloudflare.&lt;/li&gt;
@@ -120,7 +120,7 @@ Command and Control Framework Structure What is a Command and Control Framework 
 &lt;/ol&gt;
 &lt;h3 id=&#34;c2-profiles&#34;&gt;C2 Profiles&lt;/h3&gt;
 &lt;p&gt;The next technique goes by several names by several different products, &amp;ldquo;NGINX Reverse Proxy&amp;rdquo;, &amp;ldquo;Apache Mod_Proxy/Mod_Rewrite&amp;rdquo;,  &amp;ldquo;Malleable HTTP C2 Profiles&amp;rdquo;, and many others. However, they are all more or less the same. All of the Proxy features more or less allow a user to control specific elements of the incoming HTTP request. Let&amp;rsquo;s say an incoming connection request has an &amp;ldquo;X-C2-Server&amp;rdquo; header; we could explicitly extract this header using the specific technology that is at your disposal (Reverse Proxy, Mod_Proxy/Rewrite, Malleable C2 Profile, etc.) and ensure that your C2 server responds with C2 based responses. Whereas if a normal user queried the HTTP Server, they might see a generic webpage. This is all dependent on your configuration.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../../public/img/C2Profiles.png&#34;&gt;A Compromised Device and Security Analyst reach out to a C2 server&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;A Compromised Device and Security Analyst reach out to a C2 server&#34; src=&#34;../../img/C2Profiles.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The diagram above depicts how C2 profiles work:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -142,22 +142,11 @@ Command and Control Framework Structure What is a Command and Control Framework 
     </item>
     
     <item>
-      <title>Test Test</title>
-      <link>/posts/cars2/</link>
-      <pubDate>Fri, 03 May 2024 23:09:38 +0200</pubDate>
-      
-      <guid>/posts/cars2/</guid>
-      <description>Hello world!!!!!</description>
-      <content>&lt;p&gt;Hello world!!!!!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
       <title>WHOAMI</title>
-      <link>/whoami/</link>
+      <link>//localhost:1313/whoami/</link>
       <pubDate>Thu, 02 May 2024 08:23:10 +0200</pubDate>
       
-      <guid>/whoami/</guid>
+      <guid>//localhost:1313/whoami/</guid>
       <description>My name is Gabriele Annese, and</description>
       <content>&lt;p&gt;My name is &lt;strong&gt;Gabriele Annese&lt;/strong&gt;, and&lt;/p&gt;
 </content>

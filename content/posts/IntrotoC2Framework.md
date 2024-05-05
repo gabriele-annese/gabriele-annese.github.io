@@ -1,7 +1,7 @@
 +++
 title = "Intro to C2 Framework"
 description = "Introduction of C2 framework Red Temming"
-lastmod = 2024-05-03T23:32:03+02:00
+lastmod = 2024-05-05T14:09:01+02:00
 draft = false
 +++
 
@@ -17,7 +17,7 @@ Commad and Control (C2) Frameworks are an essential part of both Red Temmers and
 
 In order to better understand what a C2 Framework is at its most basic level, think of Netcat listener (**the C2 server**) that is capable of handling many reverse shells calling back at once (**C2 Agent**). It's a server but for reverse shell. Unlike Netcat almost C2 framework require a special payload generetor. Example **Metasploit** have the own paylod generator **MSFVenom**.
 
-[The Diagram depicts three compromised clients calling back to a c2 Server](../../public/img/C2-Callback.png)
+![The Diagram depicts three compromised clients calling back to a c2 Server](../../img/C2-Callback.png).
 
 
 ## Command and Control Structure {#command-and-control-structure}
@@ -91,7 +91,7 @@ There are two type of payloads in C2 Framework; **Staged** and **Stageless** pay
 
 The stageless payloads are simplest of the two; **they contain the full C2 agent and will call back to the C2 server.**
 
-[This screenshot depicts a stageless payload calling back to a C2 server](../../public/img/StagelessPayload.png)
+[This screenshot depicts a stageless payload calling back to a C2 server](../../img/StagelessPayload.png)
 
 Steps for establishing C2 beaconing with a Satgeless payload are as follows:
 
@@ -103,7 +103,7 @@ Steps for establishing C2 beaconing with a Satgeless payload are as follows:
 
 Staged payloads require a callback to the C2 server to dowload additional parts of the C2 agent. Thi is commonly refferd to as "Dropper" because it "Dropped" onto the victim machine to dowload the second staged of our payload. This is a preferred method over stageless payloads beacouse a **small amount of code needs to be written to retrive the additional parts of the C2 agent from the C2 server.**
 
-[This diagram depicts a dropper calling back to a C2 server for its second stage](../../public/img/StagedPayload.png).
+![This diagram depicts a dropper calling back to a C2 server for its second stage](../../img/StagedPayload.png).
 
 1.  The Victim dowloads and executes the Dropper
 2.  The Dropper calls back to the C2 server of Stage2
@@ -140,7 +140,7 @@ Post Exploitation modules are simply modules that deal with anything after the i
 
 One of the last major components of a C2 Framework is its pivoting modules, making it easier to access restricted network segments within the C2 Framework. If you have Administrative Access on a system you may be able to open up an "SMB Beacon", which can enable a machine to act proxy vi athe SMB protocol, this may allow machines in a restricted network segment to comunicate with C2 server.
 
-[This diagram dipcts multiple victims with an SMB pviot calling back to a C2 server.](../../public/img/pivotSMB.png)
+![This diagram dipcts multiple victims with an SMB pviot calling back to a C2 server.](../../img/pivotSMB.png)
 
 The diagram below show how hosts within a restricted network segment call back to the C2 serve:
 
@@ -159,7 +159,7 @@ One importat obstavle that all Red Teammers must overcone is placing infrastruct
 
 Domain Frontig utilizes a know good host for example Cloudflare.
 
-[This diagram shows an example HTTP beacon from a compromised device](../../public/img/DomainFronting.png)
+![This diagram shows an example HTTP beacon from a compromised device](../../img/DomainFronting.png)
 
 The diagram above depicts how Domain Fronting works:
 
@@ -174,7 +174,7 @@ The diagram above depicts how Domain Fronting works:
 
 The next technique goes by several names by several different products, "NGINX Reverse Proxy", "Apache Mod_Proxy/Mod_Rewrite",  "Malleable HTTP C2 Profiles", and many others. However, they are all more or less the same. All of the Proxy features more or less allow a user to control specific elements of the incoming HTTP request. Let's say an incoming connection request has an "X-C2-Server" header; we could explicitly extract this header using the specific technology that is at your disposal (Reverse Proxy, Mod_Proxy/Rewrite, Malleable C2 Profile, etc.) and ensure that your C2 server responds with C2 based responses. Whereas if a normal user queried the HTTP Server, they might see a generic webpage. This is all dependent on your configuration.
 
-[A Compromised Device and Security Analyst reach out to a C2 server](../../public/img/C2Profiles.png)
+![A Compromised Device and Security Analyst reach out to a C2 server](../../img/C2Profiles.png)
 
 The diagram above depicts how C2 profiles work:
 
