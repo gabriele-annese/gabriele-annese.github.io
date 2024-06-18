@@ -99,6 +99,10 @@ paginate = 5
         identifier = "CheatSheet"
         name = "CheatSheet"
         url = "/CheatSheet"
+      [[languages.en.menu.main]]
+        identifier = "Certifications"
+        name = "Certifications"
+        url = "/Certifications"
 
 [module]
   # In case you would like to make changes to the theme and keep it locally in you repository,

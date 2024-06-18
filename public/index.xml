@@ -142,6 +142,30 @@ Command and Control Framework Structure What is a Command and Control Framework 
     </item>
     
     <item>
+      <title>CERTFICATIONS</title>
+      <link>//localhost:1313/certifications/</link>
+      <pubDate>Thu, 02 May 2024 08:23:10 +0200</pubDate>
+      
+      <guid>//localhost:1313/certifications/</guid>
+      <description>This page collects all my certifications.
+Cloud AZ-900 Certifications
+Cyber Security Thry Hack Me - Jr. Penetration Tester Learning Path</description>
+      <content>&lt;p&gt;&lt;strong&gt;This page collects all my certifications.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;cloud&#34;&gt;Cloud&lt;/h1&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+   &lt;p style=&#34;font-weight: bold;&#34;&gt;AZ-900 Certifications&lt;/p&gt;
+  &lt;img src=&#34;../img/Az-900.png&#34; alt=&#34;Image description&#34; style=&#34;display: block; margin: 0 auto;width: 30%;&#34; /&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;cyber-security&#34;&gt;Cyber Security&lt;/h1&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+   &lt;p style=&#34;font-weight: bold;&#34;&gt;Thry Hack Me - Jr. Penetration Tester Learning Path&lt;/p&gt;
+  &lt;img src=&#34;../img/JrPenetrationTesterTHM.png&#34; alt=&#34;Image description&#34; style=&#34;display: block; margin: 0 auto;width: 30%;&#34; /&gt;
+&lt;/div&gt;
+</content>
+    </item>
+    
+    <item>
       <title>CHEATSHEET</title>
       <link>//localhost:1313/cheatsheet/</link>
       <pubDate>Thu, 02 May 2024 08:23:10 +0200</pubDate>
