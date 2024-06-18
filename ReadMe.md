@@ -12,6 +12,11 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git theme
 echo "theme = 'ananke'" >> hugo.toml
 hugo server
 ```
+## Build
+To build a hugo project simply type
+```
+hugo
+```
 ## Add content
 Add a new page to your site.
 ```

