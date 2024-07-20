@@ -34,8 +34,8 @@
 
 
 
-  <link rel="shortcut icon" href="//localhost:1313/img/theme-colors/pink.png">
-  <link rel="apple-touch-icon" href="//localhost:1313/img/theme-colors/pink.png">
+  <link rel="shortcut icon" href="//localhost:1313/img/theme-colors/green.png">
+  <link rel="apple-touch-icon" href="//localhost:1313/img/theme-colors/green.png">
 
 
 
@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="Terminal" />
 
   
-    <meta property="og:image" content="//localhost:1313/img/favicon/pink.png">
+    <meta property="og:image" content="//localhost:1313/img/favicon/green.png">
   
 
 <meta property="og:image:width" content="1200">
@@ -77,7 +77,7 @@
 
 
 </head>
-<body class="pink">
+<body class="green">
 
 
 <div class="container full headings--one-size">
@@ -131,21 +131,10 @@
           <li><a href="/cheatsheet" >CheatSheet</a></li>
         
       
+        
+          <li><a href="/whoami" >Whoami</a></li>
+        
       
-        <li>
-          <ul class="menu">
-            <li class="menu__trigger">Show more&nbsp;▾</li>
-            <li>
-              <ul class="menu__dropdown">
-                
-                  
-                    <li><a href="/whoami" >Whoami</a></li>
-                  
-                
-              </ul>
-            </li>
-          </ul>
-        </li>
       
     
   </ul>
@@ -161,12 +150,68 @@
   <h1 class="post-title">
     <a href="//localhost:1313/posts/introtoc2framework/">Intro to C2 Framework</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2024-05-05</time></div>
+  <div class="post-meta"><time class="post-date">2024-05-05</time><span class="post-reading-time">9 min read (1879 words)</span></div>
 
   
   
 
 
+  
+    <div class="table-of-contents">
+      <h2>
+        Table of Contents
+      </h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#command-and-control-framework-structure">Command and Control Framework Structure</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-is-a-command-and-control-framework">What is a Command and Control Framework</a></li>
+    <li><a href="#command-and-control-structure">Command and Control Structure</a>
+      <ul>
+        <li><a href="#c2-server">C2 Server</a></li>
+        <li><a href="#agents-payloads">Agents / Payloads</a></li>
+        <li><a href="#listeners">Listeners</a></li>
+        <li><a href="#beacons">Beacons</a></li>
+      </ul>
+    </li>
+    <li><a href="#obfuscating-agent-callbacks">Obfuscating Agent Callbacks</a>
+      <ul>
+        <li><a href="#sleep-timers">Sleep Timers</a></li>
+        <li><a href="#jitter">Jitter</a></li>
+      </ul>
+    </li>
+    <li><a href="#payload-types">Payload Types</a>
+      <ul>
+        <li><a href="#stageless-payloads">Stageless Payloads</a></li>
+        <li><a href="#staged-payloads">Staged Payloads</a></li>
+      </ul>
+    </li>
+    <li><a href="#payload-formats">Payload Formats</a></li>
+    <li><a href="#modules">Modules</a>
+      <ul>
+        <li><a href="#post-exploitation-modules">Post Exploitation Modules</a></li>
+        <li><a href="#pivoting-modules">Pivoting Modules</a></li>
+      </ul>
+    </li>
+    <li><a href="#facing-the-world">Facing the world</a>
+      <ul>
+        <li><a href="#domain-fronting">Domain Fronting</a></li>
+        <li><a href="#c2-profiles">C2 Profiles</a></li>
+      </ul>
+    </li>
+    <li><a href="#common-c2-frameworks">Common C2 Frameworks</a>
+      <ul>
+        <li><a href="#free-c2-framework">Free C2 Framework</a></li>
+        <li><a href="#paid-c2-framework">Paid C2 Framework</a></li>
+        <li><a href="#other-c2-frameworks">Other C2 Frameworks</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
   
 
   <div class="post-content"><div>
@@ -292,7 +337,36 @@
 <p>Because HTTPS requests are encrypted, extracting specific headers (ex: X-C2-Server, or Host) may be impossible. By using C2 Profiles, we may be able to hide our C2 server from the prying eyes of a Security Analyst. For more information on how C2 profiles can be powerful, see this blog post on <a href="https://blog.zsec.uk/cobalt-strike-profiles/">Understanding Malleable C2 Profiles for Cobalt Strike</a>.</p>
 </li>
 </ol>
+<hr>
 <h2 id="common-c2-frameworks">Common C2 Frameworks<a href="#common-c2-frameworks" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>There are several C2 frameworks available. There devided in two different groups, the <strong>free C2 framework</strong> and the <strong>premium C2 framework</strong>.</p>
+<h3 id="free-c2-framework">Free C2 Framework<a href="#free-c2-framework" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h4 id="metasploit">Metasploit<a href="#metasploit" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>The <strong><a href="https://www.metasploit.com/">Metasploit framework</a></strong> is developed by Rapid7 is one of the most popural Exploitation and Post Exploitation frameworks (C2). Is preinstalled on the most penetration testing distribution OS.
+<img alt="alt text" src="../../img/Metasploit.png"></p>
+<h4 id="armitage">Armitage<a href="#armitage" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p><strong><a href="https://web.archive.org/web/20211006153158/http://www.fastandeasyhacking.com/">Armitage</a></strong> is a extension of Metasploit framework - its add GUI user interface, is very similar to Cobalt Strike. This becouse both are developed by Raphael Mudge.
+One of the most popular can be found in the <strong>“Attacks”</strong> menu; This feature is known as the <strong><a href="https://www.youtube.com/watch?v=TZyrgTp3KoA">Hail Mary attack</a></strong>, which attempts to run all exploits for the services running on a specific workstation. Armitage really is <strong>“Fast and Easy Hacking”</strong>.</p>
+<p><img alt="alt text" src="../../img/Armitage.png"></p>
+<h4 id="powershell-empirestarkiller">Powershell Empire/Starkiller<a href="#powershell-empirestarkiller" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p><strong><a href="https://bc-security.gitbook.io/empire-wiki">Powershell Empire</a></strong> and <strong><a href="https://github.com/BC-SECURITY/Starkiller">Starkiller</a></strong> is another incredibly popular C2 originally created by Harmjoy, Sixdub, and Enigma0x3 from Veris Group. Currently, the project has been discontinued and has been picked up by the BC Security team (Cx01N, Hubbl3, and _Vinnybod). Empire features agents written in various languages compatible with multiple platforms, <strong>making it an incredibly versatile C2</strong>.
+<img alt="alt text" src="../../img/PowershellEmpire.png"></p>
+<h4 id="covenant">Covenant<a href="#covenant" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p><strong><a href="/">Covenant</a></strong> by Ryan Cobb it is one of the most unique C2 Frameworks being <strong>written in C#.</strong> Unlike Metasploit/Armitage, It’s <strong>primarily used for post-exploitation and lateral movement</strong> with HTTP, HTTPS, and SMB listeners with highly customizable agents.
+<img alt="alt text" src="../../img/Covenant.png"></p>
+<h4 id="sliver">Sliver<a href="#sliver" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p><strong><a href="https://github.com/BishopFox/sliver">Sliver</a></strong> by <strong><a href="https://bishopfox.com/">Bishop Fox</a></strong> is an advanced, highly customizable multi-user, CLI-based C2 framework. <strong>Sliver is written in Go</strong>, which makes reverse <strong>engineering the C2 &ldquo;implants&rdquo; incredibly difficult</strong>. It supports various protocols for C2 communications like WireGuard, mTLS, HTTP(S), DNS, and much more. Additionally, it supports BOF files for additional functionality, DNS Canary Domains for masking C2 communications, automatic Let&rsquo;s Encrypt certificate generation for HTTPS beacons, and much more.<br>
+<img alt="alt text" src="../../img/Silver.png"></p>
+<h3 id="paid-c2-framework">Paid C2 Framework<a href="#paid-c2-framework" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h4 id="cobalt-strike">Cobalt Strike<a href="#cobalt-strike" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p><strong><a href="https://www.cobaltstrike.com/">Cobalt Strike</a></strong> by Help Systems (Formerly created by Raphael Mudge) is arguably one of the most famous Command and Control frameworks next to Metasploit. Much like Artimage, it is written in Java and designed to be as flexible as possible. For more information, see Cobalt Strike’s <strong><a href="https://www.youtube.com/playlist?list=PLcjpg2ik7YT6H5l9Jx-1ooRYpfvznAInJ">Video Training Page</a></strong>. It offers additional insight into both Red Team Operations and the Framework by Raphael Mudge himself.</p>
+<p><img alt="alt text" src="../../img/CobaltStrike.png"></p>
+<h4 id="brute-ratel">Brute Ratel<a href="#brute-ratel" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p><strong><a href="https://bruteratel.com/">Brute Ratel</a></strong> by Chetan Nayak or Paranoid Ninja is a Command and Control framework marketed as a <strong>“Customizable Command and Control Center” or “C4”</strong> framework that provides a true adversary simulation-like experience with being a unique C2 framework. For more information about the Framework, the author has provided a Video Training Page that demonstrates many of the capabilities within the framework.</p>
+<p><img alt="alt text" src="../../img/BruteRatel.png"></p>
+<h3 id="other-c2-frameworks">Other C2 Frameworks<a href="#other-c2-frameworks" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>For a more comprehensive list of C2 Frameworks and their capabilities, check out the “<strong><a href="https://howto.thec2matrix.com/">C2 Matrix</a></strong>”, a project maintained by <strong>Jorge Orchilles</strong> and <strong>Bryson Bort</strong>.</p>
+<hr>
 
       </div></div>
 

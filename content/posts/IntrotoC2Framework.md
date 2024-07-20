@@ -184,6 +184,50 @@ The diagram above depicts how C2 profiles work:
 4.  The C2 Server responds to the client and responds to the Analyst/Compromised device.
 
     Because HTTPS requests are encrypted, extracting specific headers (ex: X-C2-Server, or Host) may be impossible. By using C2 Profiles, we may be able to hide our C2 server from the prying eyes of a Security Analyst. For more information on how C2 profiles can be powerful, see this blog post on [Understanding Malleable C2 Profiles for Cobalt Strike](https://blog.zsec.uk/cobalt-strike-profiles/).
-
+-----
 
 ## Common C2 Frameworks {#common-c2-frameworks}
+There are several C2 frameworks available. There devided in two different groups, the **free C2 framework** and the **premium C2 framework**.
+### Free C2 Framework
+#### Metasploit
+The **[Metasploit framework](https://www.metasploit.com/)** is developed by Rapid7 is one of the most popural Exploitation and Post Exploitation frameworks (C2). Is preinstalled on the most penetration testing distribution OS.
+![alt text](../../img/Metasploit.png)
+
+#### Armitage
+**[Armitage](https://web.archive.org/web/20211006153158/http://www.fastandeasyhacking.com/)** is a extension of Metasploit framework - its add GUI user interface, is very similar to Cobalt Strike. This becouse both are developed by Raphael Mudge.
+One of the most popular can be found in the **“Attacks”** menu; This feature is known as the **[Hail Mary attack](https://www.youtube.com/watch?v=TZyrgTp3KoA)**, which attempts to run all exploits for the services running on a specific workstation. Armitage really is **“Fast and Easy Hacking”**.
+
+![alt text](../../img/Armitage.png)
+
+#### Powershell Empire/Starkiller
+
+**[Powershell Empire](https://bc-security.gitbook.io/empire-wiki)** and **[Starkiller](https://github.com/BC-SECURITY/Starkiller)** is another incredibly popular C2 originally created by Harmjoy, Sixdub, and Enigma0x3 from Veris Group. Currently, the project has been discontinued and has been picked up by the BC Security team (Cx01N, Hubbl3, and _Vinnybod). Empire features agents written in various languages compatible with multiple platforms, **making it an incredibly versatile C2**.
+![alt text](../../img/PowershellEmpire.png)
+
+#### Covenant
+
+**[Covenant]()** by Ryan Cobb it is one of the most unique C2 Frameworks being **written in C#.** Unlike Metasploit/Armitage, It’s **primarily used for post-exploitation and lateral movement** with HTTP, HTTPS, and SMB listeners with highly customizable agents.
+![alt text](../../img/Covenant.png)
+
+#### Sliver
+**[Sliver](https://github.com/BishopFox/sliver)** by **[Bishop Fox](https://bishopfox.com/)** is an advanced, highly customizable multi-user, CLI-based C2 framework. **Sliver is written in Go**, which makes reverse **engineering the C2 "implants" incredibly difficult**. It supports various protocols for C2 communications like WireGuard, mTLS, HTTP(S), DNS, and much more. Additionally, it supports BOF files for additional functionality, DNS Canary Domains for masking C2 communications, automatic Let's Encrypt certificate generation for HTTPS beacons, and much more.  
+![alt text](../../img/Silver.png)
+
+### Paid C2 Framework
+#### Cobalt Strike
+
+**[Cobalt Strike](https://www.cobaltstrike.com/)** by Help Systems (Formerly created by Raphael Mudge) is arguably one of the most famous Command and Control frameworks next to Metasploit. Much like Artimage, it is written in Java and designed to be as flexible as possible. For more information, see Cobalt Strike’s **[Video Training Page](https://www.youtube.com/playlist?list=PLcjpg2ik7YT6H5l9Jx-1ooRYpfvznAInJ)**. It offers additional insight into both Red Team Operations and the Framework by Raphael Mudge himself.
+
+![alt text](../../img/CobaltStrike.png)
+
+#### Brute Ratel
+
+**[Brute Ratel](https://bruteratel.com/)** by Chetan Nayak or Paranoid Ninja is a Command and Control framework marketed as a **“Customizable Command and Control Center” or “C4”** framework that provides a true adversary simulation-like experience with being a unique C2 framework. For more information about the Framework, the author has provided a Video Training Page that demonstrates many of the capabilities within the framework.
+
+
+![alt text](../../img/BruteRatel.png)
+
+### Other C2 Frameworks
+For a more comprehensive list of C2 Frameworks and their capabilities, check out the “**[C2 Matrix](https://howto.thec2matrix.com/)**”, a project maintained by **Jorge Orchilles** and **Bryson Bort**.
+
+----
