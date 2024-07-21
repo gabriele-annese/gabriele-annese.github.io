@@ -34,8 +34,8 @@
 
 
 
-  <link rel="shortcut icon" href="//localhost:1313/img/theme-colors/green.png">
-  <link rel="apple-touch-icon" href="//localhost:1313/img/theme-colors/green.png">
+  <link rel="shortcut icon" href="//localhost:1313/img/theme-colors/red.png">
+  <link rel="apple-touch-icon" href="//localhost:1313/img/theme-colors/red.png">
 
 
 
@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="Terminal" />
 
   
-    <meta property="og:image" content="//localhost:1313/img/favicon/green.png">
+    <meta property="og:image" content="//localhost:1313/img/favicon/red.png">
   
 
 <meta property="og:image:width" content="1200">
@@ -77,7 +77,7 @@
 
 
 </head>
-<body class="green">
+<body class="red">
 
 
 <div class="container full headings--one-size">
@@ -150,7 +150,7 @@
   <h1 class="post-title">
     <a href="//localhost:1313/posts/introtoc2framework/">Intro to C2 Framework</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2024-05-05</time><span class="post-reading-time">9 min read (1879 words)</span></div>
+  <div class="post-meta"><time class="post-date">2024-05-05</time><span class="post-reading-time">11 min read (2146 words)</span></div>
 
   
   
@@ -209,6 +209,14 @@
         <li><a href="#other-c2-frameworks">Other C2 Frameworks</a></li>
       </ul>
     </li>
+    <li><a href="#setup-armitage-c2">Setup Armitage C2</a>
+      <ul>
+        <li><a href="#teamserver">Teamserver</a></li>
+        <li><a href="#prepare-environment">Prepare Environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#c2-operation-basics">C2 Operation Basics</a></li>
+    <li><a href="#advanced-c2-setups">Advanced C2 Setups</a></li>
   </ul>
 </nav>
     </div>
@@ -367,6 +375,43 @@ One of the most popular can be found in the <strong>“Attacks”</strong> menu;
 <h3 id="other-c2-frameworks">Other C2 Frameworks<a href="#other-c2-frameworks" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>For a more comprehensive list of C2 Frameworks and their capabilities, check out the “<strong><a href="https://howto.thec2matrix.com/">C2 Matrix</a></strong>”, a project maintained by <strong>Jorge Orchilles</strong> and <strong>Bryson Bort</strong>.</p>
 <hr>
+<h2 id="setup-armitage-c2">Setup Armitage C2<a href="#setup-armitage-c2" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Downloading , Building, and install Armitage</p>
+<p>To download armitage we can download them on <a href="https://gitlab.com/kalilinux/packages/armitage">there git repository</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://gitlab.com/kalilinux/packages/armitage.git <span style="color:#f92672">&amp;&amp;</span> cd armitage
+</span></span></code></pre></div><p>Netx up, build the project with <strong>package.sh</strong> script</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash package.sh
+</span></span></code></pre></div><p>if build was successful in the release is in <strong>./release/unix</strong> folder</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ./release/unix/ <span style="color:#f92672">&amp;&amp;</span> ls -la
+</span></span></code></pre></div><h3 id="teamserver">Teamserver<a href="#teamserver" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p><strong>Teamserver</strong> is a file that will start the Armitage server that multiple users will able to connect to. This file contains</p>
+<ul>
+<li><strong>IP Address</strong>: The Red Team operetors  will use IP address to connet</li>
+<li><strong>Shared Password</strong>:The Red Team operetors use the Shared Password to access the Armitage server.</li>
+</ul>
+<p><strong>Armitage</strong> is the file will using to connect to armitage server. When the binary execute a new propt will open up, chose a username and insert the password.</p>
+<p><img alt="alt text" src="../../img/ConnetArmitage.png"></p>
+<h3 id="prepare-environment">Prepare Environment<a href="#prepare-environment" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Before launch Armitage we musto do a few pre-flight checks to ensure Metasploit is configured properly.</p>
+<p><strong>Postgresql</strong>
+Satrt postgresql db.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl start postgresql <span style="color:#f92672">&amp;&amp;</span> systemctl status postgresql
+</span></span></code></pre></div><p><strong>Metasploit DB</strong>
+Initialize the  Metasploit Database.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> msfdb --use-defaults delete
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> msfdb --use-defaults init
+</span></span></code></pre></div><p><strong>Starting connection to Armitage</strong>
+To start teamserver</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt/armitage/release/unix <span style="color:#f92672">&amp;&amp;</span> ./teamserver YourIP &lt;Passowrd&gt;
+</span></span></code></pre></div><p>To start armitage client</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt/armitage/release/unix <span style="color:#f92672">&amp;&amp;</span> ./armitage
+</span></span></code></pre></div><blockquote>
+<p>[!NOTE]
+When operating a C2 Framework, you never want to expose the management interface publicly; <strong>You should always listen on a local interface</strong>. This complicates access for fellow operators. Fortunately, there is an easy solution for this. For operators to gain access to the server, you should create a new user account for them and enable SSH access on the server, and they will be able to <strong>SSH port forward</strong> TCP/55553.</p>
+</blockquote>
+<hr>
+<h2 id="c2-operation-basics">C2 Operation Basics<a href="#c2-operation-basics" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="advanced-c2-setups">Advanced C2 Setups<a href="#advanced-c2-setups" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 
       </div></div>
 

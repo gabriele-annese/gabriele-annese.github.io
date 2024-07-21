@@ -167,6 +167,43 @@ One of the most popular can be found in the &lt;strong&gt;“Attacks”&lt;/stro
 &lt;h3 id=&#34;other-c2-frameworks&#34;&gt;Other C2 Frameworks&lt;/h3&gt;
 &lt;p&gt;For a more comprehensive list of C2 Frameworks and their capabilities, check out the “&lt;strong&gt;&lt;a href=&#34;https://howto.thec2matrix.com/&#34;&gt;C2 Matrix&lt;/a&gt;&lt;/strong&gt;”, a project maintained by &lt;strong&gt;Jorge Orchilles&lt;/strong&gt; and &lt;strong&gt;Bryson Bort&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
+&lt;h2 id=&#34;setup-armitage-c2&#34;&gt;Setup Armitage C2&lt;/h2&gt;
+&lt;p&gt;Downloading , Building, and install Armitage&lt;/p&gt;
+&lt;p&gt;To download armitage we can download them on &lt;a href=&#34;https://gitlab.com/kalilinux/packages/armitage&#34;&gt;there git repository&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://gitlab.com/kalilinux/packages/armitage.git &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; cd armitage
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Netx up, build the project with &lt;strong&gt;package.sh&lt;/strong&gt; script&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bash package.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if build was successful in the release is in &lt;strong&gt;./release/unix&lt;/strong&gt; folder&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd ./release/unix/ &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ls -la
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;teamserver&#34;&gt;Teamserver&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Teamserver&lt;/strong&gt; is a file that will start the Armitage server that multiple users will able to connect to. This file contains&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IP Address&lt;/strong&gt;: The Red Team operetors  will use IP address to connet&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shared Password&lt;/strong&gt;:The Red Team operetors use the Shared Password to access the Armitage server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Armitage&lt;/strong&gt; is the file will using to connect to armitage server. When the binary execute a new propt will open up, chose a username and insert the password.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; src=&#34;../../img/ConnetArmitage.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;prepare-environment&#34;&gt;Prepare Environment&lt;/h3&gt;
+&lt;p&gt;Before launch Armitage we musto do a few pre-flight checks to ensure Metasploit is configured properly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Postgresql&lt;/strong&gt;
+Satrt postgresql db.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl start postgresql &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl status postgresql
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Metasploit DB&lt;/strong&gt;
+Initialize the  Metasploit Database.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; msfdb --use-defaults delete
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; msfdb --use-defaults init
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Starting connection to Armitage&lt;/strong&gt;
+To start teamserver&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /opt/armitage/release/unix &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./teamserver YourIP &amp;lt;Passowrd&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To start armitage client&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /opt/armitage/release/unix &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./armitage
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]
+When operating a C2 Framework, you never want to expose the management interface publicly; &lt;strong&gt;You should always listen on a local interface&lt;/strong&gt;. This complicates access for fellow operators. Fortunately, there is an easy solution for this. For operators to gain access to the server, you should create a new user account for them and enable SSH access on the server, and they will be able to &lt;strong&gt;SSH port forward&lt;/strong&gt; TCP/55553.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;c2-operation-basics&#34;&gt;C2 Operation Basics&lt;/h2&gt;
+&lt;h2 id=&#34;advanced-c2-setups&#34;&gt;Advanced C2 Setups&lt;/h2&gt;
 </content>
     </item>
     

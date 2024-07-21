@@ -253,3 +253,45 @@ cd ./release/unix/ && ls -la
 ```
 
 ### Teamserver
+
+**Teamserver** is a file that will start the Armitage server that multiple users will able to connect to. This file contains 
+- **IP Address**: The Red Team operetors  will use IP address to connet
+- **Shared Password**:The Red Team operetors use the Shared Password to access the Armitage server.
+
+**Armitage** is the file will using to connect to armitage server. When the binary execute a new propt will open up, chose a username and insert the password.
+
+![alt text](../../img/ConnetArmitage.png)
+
+### Prepare Environment
+Before launch Armitage we musto do a few pre-flight checks to ensure Metasploit is configured properly.
+
+**Postgresql**
+Satrt postgresql db.
+```bash
+systemctl start postgresql && systemctl status postgresql
+```
+**Metasploit DB**
+Initialize the  Metasploit Database.
+```bash
+ msfdb --use-defaults delete
+```
+```bash
+ msfdb --use-defaults init
+```
+
+**Starting connection to Armitage**
+To start teamserver
+```bash
+cd /opt/armitage/release/unix && ./teamserver YourIP <Passowrd>
+```
+To start armitage client
+```bash
+cd /opt/armitage/release/unix && ./armitage
+```
+
+>[!NOTE]
+>When operating a C2 Framework, you never want to expose the management interface publicly; **You should always listen on a local interface**. This complicates access for fellow operators. Fortunately, there is an easy solution for this. For operators to gain access to the server, you should create a new user account for them and enable SSH access on the server, and they will be able to **SSH port forward** TCP/55553. 
+
+-----
+## C2 Operation Basics
+## Advanced C2 Setups
