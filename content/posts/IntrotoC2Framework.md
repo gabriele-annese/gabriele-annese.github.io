@@ -238,16 +238,18 @@ Downloading , Building, and install Armitage
 To download armitage we can download them on [there git repository](https://gitlab.com/kalilinux/packages/armitage). 
 
 ```bash
-root@kali$ git clone https://gitlab.com/kalilinux/packages/armitage.git && cd armitage
+git clone https://gitlab.com/kalilinux/packages/armitage.git && cd armitage
 ```
 
 Netx up, build the project with **package.sh** script
 ```bash
-root@kali$ bash package.sh
+bash package.sh
 ```
 
 if build was successful in the release is in **./release/unix** folder
 
 ```bash
-root@kali$ cd ./release/unix/ && ls -la
+cd ./release/unix/ && ls -la
 ```
+
+### Teamserver
