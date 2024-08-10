@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Terminal</title>
-    <link>//localhost:1313/posts/</link>
+    <link>/posts/</link>
     <description>Recent content in Posts on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 05 May 2024 14:09:01 +0200</lastBuildDate><atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2024 14:09:01 +0200</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intro to C2 Framework</title>
-      <link>//localhost:1313/posts/introtoc2framework/</link>
+      <link>/posts/introtoc2framework/</link>
       <pubDate>Sun, 05 May 2024 14:09:01 +0200</pubDate>
       
-      <guid>//localhost:1313/posts/introtoc2framework/</guid>
+      <guid>/posts/introtoc2framework/</guid>
       <description>Introduction Commad and Control (C2) Frameworks are an essential part of both Red Temmers and Advanced Adversaries playbooks. They make it both easy to manage compromised devices during a engagement and often help aid in laterl movement.
 Command and Control Framework Structure What is a Command and Control Framework In order to better understand what a C2 Framework is at its most basic level, think of Netcat listener (the C2 server) that is capable of handling many reverse shells calling back at once (C2 Agent).</description>
       <content>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -152,7 +152,7 @@ One of the most popular can be found in the &lt;strong&gt;“Attacks”&lt;/stro
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://bc-security.gitbook.io/empire-wiki&#34;&gt;Powershell Empire&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href=&#34;https://github.com/BC-SECURITY/Starkiller&#34;&gt;Starkiller&lt;/a&gt;&lt;/strong&gt; is another incredibly popular C2 originally created by Harmjoy, Sixdub, and Enigma0x3 from Veris Group. Currently, the project has been discontinued and has been picked up by the BC Security team (Cx01N, Hubbl3, and _Vinnybod). Empire features agents written in various languages compatible with multiple platforms, &lt;strong&gt;making it an incredibly versatile C2&lt;/strong&gt;.
 &lt;img alt=&#34;alt text&#34; src=&#34;../../img/PowershellEmpire.png&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;covenant&#34;&gt;Covenant&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;//localhost:1313/&#34;&gt;Covenant&lt;/a&gt;&lt;/strong&gt; by Ryan Cobb it is one of the most unique C2 Frameworks being &lt;strong&gt;written in C#.&lt;/strong&gt; Unlike Metasploit/Armitage, It’s &lt;strong&gt;primarily used for post-exploitation and lateral movement&lt;/strong&gt; with HTTP, HTTPS, and SMB listeners with highly customizable agents.
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;/&#34;&gt;Covenant&lt;/a&gt;&lt;/strong&gt; by Ryan Cobb it is one of the most unique C2 Frameworks being &lt;strong&gt;written in C#.&lt;/strong&gt; Unlike Metasploit/Armitage, It’s &lt;strong&gt;primarily used for post-exploitation and lateral movement&lt;/strong&gt; with HTTP, HTTPS, and SMB listeners with highly customizable agents.
 &lt;img alt=&#34;alt text&#34; src=&#34;../../img/Covenant.png&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;sliver&#34;&gt;Sliver&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/BishopFox/sliver&#34;&gt;Sliver&lt;/a&gt;&lt;/strong&gt; by &lt;strong&gt;&lt;a href=&#34;https://bishopfox.com/&#34;&gt;Bishop Fox&lt;/a&gt;&lt;/strong&gt; is an advanced, highly customizable multi-user, CLI-based C2 framework. &lt;strong&gt;Sliver is written in Go&lt;/strong&gt;, which makes reverse &lt;strong&gt;engineering the C2 &amp;ldquo;implants&amp;rdquo; incredibly difficult&lt;/strong&gt;. It supports various protocols for C2 communications like WireGuard, mTLS, HTTP(S), DNS, and much more. Additionally, it supports BOF files for additional functionality, DNS Canary Domains for masking C2 communications, automatic Let&amp;rsquo;s Encrypt certificate generation for HTTPS beacons, and much more.&lt;br&gt;
