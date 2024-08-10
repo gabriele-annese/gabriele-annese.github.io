@@ -8,7 +8,7 @@ draft = false
 # Cloud
 
 <div style="text-align: center;">
-   <p style="font-weight: bold;">AZ-900 Certifications</p>
+   <p style="font-weight: bold;">Microsoft - AZ-900</p>
   <img src="../img/Az-900.png" alt="Image description" style="display: block; margin: 0 auto;width: 30%;" />
 </div>
 
