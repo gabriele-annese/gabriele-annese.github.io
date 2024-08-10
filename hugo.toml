@@ -11,7 +11,7 @@ paginate = 5
   contentTypeName = "posts"
 
   # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "red"
+  themeColor = "green"
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 5
@@ -20,7 +20,7 @@ paginate = 5
   showLanguageSelector = false
 
   # set theme to full screen width
-  fullWidthTheme = true
+  fullWidthTheme = false
 
   # center theme with default width
   centerTheme = true
@@ -32,7 +32,7 @@ paginate = 5
 
   # set post to show the last updated
   # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  showLastUpdated = false
+  showLastUpdated = true
 
   # set a custom favicon (default is a `themeColor` square)
   # favicon = "favicon.ico"
